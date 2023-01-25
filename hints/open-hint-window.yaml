@@ -1,0 +1,23 @@
+# Alacritty config file snippet
+# Terminal hint to show a pop window with hint content
+hints:
+  enabled:
+  # Show color
+   - regex: "(#|0x)[0-9a-f]|[0-9A-F]){6}"
+     hyperlinks: true
+     command:
+       program: /usr/local/libexec/alacritty/hints/open-hint-window.py
+       args: ["color"]
+     mouse:
+       enabled: true
+       mods: None
+       
+  # Show image
+   - regex: ".(png|jpeg|jpg)"
+     hyperlinks: true
+     command:
+       program: /usr/local/libexec/alacritty/hints/open-hint-window.py
+       args: ["image"]
+     mouse:
+       enabled: true
+       mods: None
