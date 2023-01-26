@@ -1,0 +1,30 @@
+# Alacritty config file snippet
+# Terminal hint to show a pop window with hint content
+#
+# You need to copy alacritty-terminal-hints/hints/open-hint-window.py
+# to /usr/local/libexec/alacritty/hints/open-hint-window.py
+# and make it executable.
+#
+# Requires Gtk3 Python bindings, f.ex. python3-gi on Debian
+
+hints:
+  enabled:
+  # Show color
+   - regex: "(#|0x)[0-9a-f]|[0-9A-F]){6}"
+     hyperlinks: true
+     command:
+       program: /usr/local/libexec/alacritty/hints/open-hint-window.py
+       args: ["color"]
+     mouse:
+       enabled: true
+       mods: None
+       
+  # Show image
+   - regex: ".(png|jpeg|jpg)"
+     hyperlinks: true
+     command:
+       program: /usr/local/libexec/alacritty/hints/open-hint-window.py
+       args: ["image"]
+     mouse:
+       enabled: true
+       mods: None
